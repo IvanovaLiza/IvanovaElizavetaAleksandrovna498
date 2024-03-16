@@ -7,10 +7,11 @@ def search(dt, data):
             return stroka
     return None
 
+# Открываем файл
 with open('scientist.txt', encoding='utf-8') as file:
     data = list(csv.reader(file, delimiter='#'))
 
-
+# Вводим любую дату через тире и находим нужного ученого
     dt = input()
     while dt != "эксперимент":
         res = search(dt, data)
