@@ -1,8 +1,8 @@
 import csv
 
 with open('scientist.txt', encoding='utf-8') as file, open('scientist_origin.txt.csv', 'w', encoding='utf-8') as new_file:
-    data = list(csv.reader(file, delimiter=','))
-    res = csv.writer(new_file, delimiter=',')
+    data = list(csv.reader(file, delimiter='#'))
+    res = csv.writer(new_file, delimiter='#')
 
     prep = 'Аллопуринола'
     a = []

@@ -14,7 +14,6 @@ with open('scientist.txt', encoding='utf-8') as file, open('scientist_with_hash.
 
 # Нахождения нужной строки
     data = data.append('hash')
-    res.writerow(data[0])
     for stroka in data[1:]:
         k = hash(stroka)
         sm = (sum(k) % 2048)
