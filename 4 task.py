@@ -26,8 +26,8 @@ def create_password(lenght):
 
 # Открываем файл и создаем новый с измененными данными по задаче
 with open('scientist.txt', encoding='utf-8') as file, open('scientist_password.csv', 'w', encoding='utf-8') as new_file:
-    data = list(csv.reader(file, delimiter=','))
-    res = csv.writer(new_file, delimiter=',')
+    data = list(csv.reader(file, delimiter='#'))
+    res = csv.writer(new_file, delimiter='#')
 
 # добавляем нужные столбцы и для каждой строки прописываем логин и пароль
     data[0].append('login')

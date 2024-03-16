@@ -1,19 +1,22 @@
 import csv
 import random
 
+# Выполнение функции для нахождения индекса
 def hash(s):
     res = ''.join(random.choice(i) for i in range(0, 1024))
     ind = res % 1024
     return ind
 
+# Открываем файл и создаем новый файл с измененными данными по задаче
 with open('scientist.txt', encoding='utf-8') as file, open('scientist_with_hash.csv', 'w', encoding='utf-8') as new_file:
-    data = list(csv.reader(file, delimiter=','))
-    res = csv.writer(new_file, delimiter=',')
+    data = list(csv.reader(file, delimiter='#'))
+    res = csv.writer(new_file, delimiter='#')
 
-    res = data[-1].append('hash')
+# Нахождения нужной строки
+    data = data.append('hash')
     res.writerow(data[0])
     for stroka in data[1:]:
-        if stroka == hash(stroka):
-            k = hash(stroka)
-        sm = sum(k)
-    res.writerow(sm)
+        k = hash(stroka)
+        sm = (sum(k) % 2048)
+        stroka.append(sm)
+    res.writerow(stroka)
