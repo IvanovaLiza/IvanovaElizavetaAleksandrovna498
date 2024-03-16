@@ -10,10 +10,10 @@ with open('scientist.txt', encoding='utf-8') as file, open('scientist_with_hash.
     data = list(csv.reader(file, delimiter=','))
     res = csv.writer(new_file, delimiter=',')
 
-    res = res[-1].append('hash')
+    res = data[-1].append('hash')
     res.writerow(data[0])
     for stroka in data[1:]:
         if stroka == hash(stroka):
             k = hash(stroka)
         sm = sum(k)
-        res.writerow(sm)
+    res.writerow(sm)
